@@ -2,9 +2,11 @@ const Employee = require("./Employee");
 
 class Intern extends Employee {
 	constructor(name, id, email, school) {
-		super(name, id, email);
+		if (school === undefined || typeof school !== "string") {
+			throw new Error("Interns must be intialized with a school property");
+		}
+		super(name, id, email, "Intern");
 		this.school = school;
-		this.role = "Intern";
 	}
 	getSchool() {
 		return this.school;

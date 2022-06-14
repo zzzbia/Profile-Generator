@@ -5,8 +5,6 @@ class Employee {
 				"Employee must be intialized with a name an id and email"
 			);
 		}
-		// if ("hussam" && undefined && "hussam@mfds.coj") => true
-		// if ("hussam" or 21312 or undefined) => false
 
 		this.name = name;
 		this.id = id;

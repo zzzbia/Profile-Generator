@@ -2,9 +2,11 @@ const Employee = require("./Employee");
 
 class Engineer extends Employee {
 	constructor(name, id, email, github) {
-		super(name, id, email);
+		super(name, id, email, "Engineer");
+		if (github === undefined || typeof github !== "string") {
+			throw new Error("Expected to receive a github username");
+		}
 		this.github = github;
-		this.role = "Engineer";
 	}
 	getGithub() {
 		return this.github;
@@ -13,11 +15,5 @@ class Engineer extends Employee {
 		return this.role;
 	}
 }
-
-const Rabia = new Engineer("Rabia", 1, "email@email", "zzzbia");
-console.log(Rabia);
-
-console.log(Rabia.getRole());
-console.log(Rabia.getGithub());
 
 module.exports = Engineer;

@@ -2,9 +2,11 @@ const Employee = require("./Employee");
 
 class Manager extends Employee {
 	constructor(name, id, email, officeNumber) {
-		super(name, id, email);
+		if (officeNumber === undefined || typeof officeNumber !== "number") {
+			throw new Error("Expected to receive a office number");
+		}
+		super(name, id, email, "Manager");
 		this.officeNumber = officeNumber;
-		this.role = "Manager";
 	}
 	getOfficeNumber() {
 		return this.officeNumber;

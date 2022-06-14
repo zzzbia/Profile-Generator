@@ -13,3 +13,7 @@ const questions = [
 
 	{ type: "input", name: "github", message: "What is your GitHub username?" },
 ];
+
+function init() {
+	inquirer.prompt(questions).then((response) => {});
+}
