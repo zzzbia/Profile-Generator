@@ -47,8 +47,16 @@ async function init() {
 			name: "name",
 			message: "What is the team manager's name?",
 		},
-		questions[2],
-		questions[3],
+		{
+			type: "input",
+			name: "id",
+			message: "What is the team manager's ID?",
+		},
+		{
+			type: "input",
+			name: "email",
+			message: "What is the team manager's email?",
+		},
 		{
 			type: "input",
 			name: "officeNumber",
@@ -115,9 +123,35 @@ async function init() {
 			notFinished = false;
 		}
 	}
+	// read the contents of ./src/index.html
+	const html = fs.readFileSync(path.join(__dirname, "src/index.html"), "utf8");
+	// replace the placeholder text     {{TeamPlaceholder}} with the team data
+	const teamContainerContent = team
+		.map((member) => {
+			return `<div class="aspect-square rounded-xl border mx-10 flex flex-col">
+		<div class="p-5 border-b flex justify-center items-center flex-col">
+			<h2 class="text-2xl font-bold">${member.name}</h2>
+			<h3 class="font-light">${member.role}</h3>
+		</div>
+		<div class="flex-grow flex flex-col text-lg justify-center items-center	">
+			<div class="bg-slate-200 rounded-xl flex flex-col p-10">
+				<span>Id: ${member.id}</span>
+				<a href="mailto:${member.email}">Email: ${member.email}</a>
+				<span>${member.officeNumber || member.github || member.school || ""}</span>
+			</div>
+		</div>
+	</div>`;
+		})
+		.join("");
+
+	const renderedHTML = html.replace(
+		"{{TeamPlaceholder}}",
+		teamContainerContent
+	);
+
 	// write out team into a json file called team.json in ./dist/team.json
-	const writePath = "./dist/team.json";
-	fs.writeFileSync(writePath, JSON.stringify(team));
+	const writePath = "./dist/index.html";
+	fs.writeFileSync(writePath, renderedHTML);
 }
 
 init();
