@@ -1,6 +1,7 @@
 {
 	"scripts": {
-		"test": "jest"
+		"test": "jest",
+		"jcache": "jest --clearCache"
 	},
 	"dependencies": {
 		"inquirer": "^8.2.4",

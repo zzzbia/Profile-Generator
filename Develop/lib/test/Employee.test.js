@@ -1,9 +1,24 @@
 const Employee = require("../../lib/Employee");
 
 describe("Employee", () => {
-	it("Creates an employee object", () => {
-		const employee = new Employee("Jenny", 1, "email@email.com");
-		expect(employee).toBeInstanceOf(Employee);
+	describe("Inialization", () => {
+		//Positive Test
+		it("should creates an employee object", () => {
+			// Act
+			const employee = new Employee("Jenny", 1, "email@email.com");
+			// Assert
+			expect(employee).toBeInstanceOf(Employee);
+		});
+		// Negative Test
+		it("should throw an error if not provided a with a 'name' an 'id' and 'email'", () => {
+			//Arrange
+			const cb = () => new Employee();
+			const err = new Error(
+				"Employee must be intialized with a name an id and email"
+			);
+			//Assert
+			expect(cb).toThrow(err);
+		});
 	});
 });
 
