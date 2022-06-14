@@ -1,6 +1,10 @@
 const inquirer = require("inquirer");
-const jest = require("jest");
+const fs = require("fs");
 const path = require("path");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager");
+const Employee = require("./lib/Employee");
 
 const questions = [
 	{
@@ -12,7 +16,7 @@ const questions = [
 	{
 		type: "input",
 		name: "name",
-		message: "What is your first name?",
+		message: "What is their first name?",
 	},
 	{ type: "input", name: "email", message: "What is the team member's email?" },
 	{ type: "input", name: "id", message: "What is your ID?" },
@@ -44,6 +48,7 @@ async function init() {
 			message: "What is the team manager's name?",
 		},
 		questions[2],
+		questions[3],
 		{
 			type: "input",
 			name: "officeNumber",
@@ -55,18 +60,50 @@ async function init() {
 		throw new Error("Manager is required");
 	}
 
-	team.push({ ...manager, role: "manager" });
+	team.push(
+		new Manager(
+			manager.name,
+			manager.id,
+			manager.email,
+			parseInt(manager.officeNumber)
+		)
+	);
 
 	let notFinished = true;
 
 	while (notFinished) {
-		const employeee = await inquirer.prompt(questions);
-		if (employeee.role === "No more team members") {
+		const response = await inquirer.prompt(questions);
+		if (response.role === "No more team members") {
 			notFinished = false;
 			break;
 		}
-		team.push(employeee);
-		const finished = await inquirer.prompt([
+
+		let employee;
+
+		switch (response.role) {
+			case "Engineer":
+				employee = new Engineer(
+					response.name,
+					response.id,
+					response.email,
+					response.github
+				);
+				break;
+			case "Intern":
+				employee = new Intern(
+					response.name,
+					response.id,
+					response.email,
+					response.school
+				);
+				break;
+			case "Employee":
+				employee = new Employee(response.name, response.id, response.email);
+				break;
+		}
+
+		team.push(employee);
+		const finishPrompt = await inquirer.prompt([
 			{
 				type: "list",
 				name: "createMore",
@@ -74,12 +111,13 @@ async function init() {
 				message: "Would you like to create more employees?",
 			},
 		]);
-		if (finished.createMore === "No") {
+		if (finishPrompt.createMore === "No") {
 			notFinished = false;
 		}
 	}
-
-	console.log(team);
+	// write out team into a json file called team.json in ./dist/team.json
+	const writePath = "./dist/team.json";
+	fs.writeFileSync(writePath, JSON.stringify(team));
 }
 
 init();
