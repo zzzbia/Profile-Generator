@@ -67,7 +67,7 @@ npm jcache
 ![Terminal](/assets/img/terminal.png)
 ## Video
  
- [![Watch the video](https://vimeo.com/720867828)
+[Watch the video](https://vimeo.com/720867828)
 
 ## 💭 Questions
 If you have any questions, please make an issue within the repo or visit my GitHub profile at [zzzbia's github](https://github.com/zzzbia)
