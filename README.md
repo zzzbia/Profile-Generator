@@ -6,6 +6,7 @@
  Ever wanted to create an Employee Team with the employee profiles? Don't worry, now you can! A HTML file will be created with the Team you have chosen by answering questions in the terminal. 
 
 
+## Table Of Contents
 - [Installation](#💾-installation)
 - [Usage](#💡-usage)
 - [Contributing](#👥-contributing)
@@ -32,16 +33,18 @@ While in the root directory, run:
 ```
 node index.js
 ```
-
+or 
+```
+npm start
+```
 The generator will prompt you with questions necessary to generate your team members and their profiles
-
 
 
 
 ## 👥 Contributing
 To contribute to the Team Profile Generator:
  1. Please first **Fork** the repo on GitHub
- 2. **Clone** the project on your compuer
+ 2. **Clone** the project on your computer
  3. **Commit** the changes you would like to see
  4. **Push** to your existing forked project
  5. Finally please submit a **Pull request**

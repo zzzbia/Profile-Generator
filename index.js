@@ -125,19 +125,33 @@ async function init() {
 	}
 	// read the contents of ./src/index.html
 	const html = fs.readFileSync(path.join(__dirname, "src/index.html"), "utf8");
-	// replace the placeholder text  {{TeamPlaceholder}} with the team data
+	// replaces the placeholder text  {{TeamPlaceholder}} with the team data
+
 	const teamContainerContent = team
 		.map((member) => {
+			let span = "";
+
+			if (member.officeNumber) {
+				span = `<span class="officeNumber">Office Number: ${member.officeNumber}</span>`;
+			}
+			if (member.github) {
+				span = `<a class="text-sky-500 hover:text-sky-600" href="https://github.com/${member.github}"> Github: ${member.github}</a>`;
+			}
+			if (member.school) {
+				span = `<span class="school">School: ${member.school}</span>`;
+			}
+
 			return `<div class="aspect-square rounded-xl border mx-10 flex flex-col">
 		<div class="p-5 border-b flex justify-center items-center flex-col">
 			<h2 class="text-2xl font-bold">${member.name}</h2>
-			<h3 class="font-light">${member.role}</h3>
+			<h3 class="font-light">${member.role} </h3>
+			
 		</div>
 		<div class="flex-grow flex flex-col text-lg justify-center items-center	">
 			<div class="bg-slate-200 rounded-xl flex flex-col p-10">
 				<span>Id: ${member.id}</span>
-				<a href="mailto:${member.email}">Email: ${member.email}</a>
-				<span>${member.officeNumber || member.github || member.school || ""}</span>
+				<a class="text-sky-500 hover:text-sky-600"href="mailto:${member.email}">Email: ${member.email}</a>
+				${span}
 			</div>
 		</div>
 	</div>`;

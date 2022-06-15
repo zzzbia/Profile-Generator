@@ -18,7 +18,7 @@ describe("Manager", () => {
 		});
 	});
 });
-
+// Checking the role of the employee, the role should return as Manager
 describe("getRole()", () => {
 	it("should return the role of the employee as Manager", () => {
 		const manager = new Manager("John", 0, "email@email.com", 1221);
