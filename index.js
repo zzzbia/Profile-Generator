@@ -16,10 +16,10 @@ const questions = [
 	{
 		type: "input",
 		name: "name",
-		message: "What is their first name?",
+		message: "What is the team member's first name?",
 	},
 	{ type: "input", name: "email", message: "What is the team member's email?" },
-	{ type: "input", name: "id", message: "What is your ID?" },
+	{ type: "input", name: "id", message: "What is the team member's ID?" },
 	{
 		type: "input",
 		name: "github",
@@ -125,7 +125,7 @@ async function init() {
 	}
 	// read the contents of ./src/index.html
 	const html = fs.readFileSync(path.join(__dirname, "src/index.html"), "utf8");
-	// replace the placeholder text     {{TeamPlaceholder}} with the team data
+	// replace the placeholder text  {{TeamPlaceholder}} with the team data
 	const teamContainerContent = team
 		.map((member) => {
 			return `<div class="aspect-square rounded-xl border mx-10 flex flex-col">
