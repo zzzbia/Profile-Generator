@@ -130,21 +130,25 @@ async function init() {
 	const teamContainerContent = team
 		.map((member) => {
 			let span = "";
+			let icon = "";
 
 			if (member.officeNumber) {
 				span = `<span class="officeNumber">Office Number: ${member.officeNumber}</span>`;
+				icon = `<i class="ri-cup-fill"></i>`;
 			}
 			if (member.github) {
 				span = `<a class="text-sky-500 hover:text-sky-600" href="https://github.com/${member.github}"> Github: ${member.github}</a>`;
+				icon = `<i class="ri-code-s-slash-fill"></i>`;
 			}
 			if (member.school) {
 				span = `<span class="school">School: ${member.school}</span>`;
+				icon = `<i class="ri-user-smile-line"></i>`;
 			}
 
 			return `<div class="aspect-square rounded-xl border mx-10 flex flex-col">
 		<div class="p-5 border-b flex justify-center items-center flex-col">
 			<h2 class="text-2xl font-bold">${member.name}</h2>
-			<h3 class="font-light">${member.role} </h3>
+			<h3 class="font-light">${member.role} ${icon}</h3>
 			
 		</div>
 		<div class="flex-grow flex flex-col text-lg justify-center items-center	">

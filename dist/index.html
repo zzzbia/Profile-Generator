@@ -2,85 +2,77 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Team Profile Generator</title>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                    }
-                }
-            }
-        }
-    </script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<title>Team Profile Generator</title>
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						clifford: '#da373d',
+					}
+				}
+			}
+		}
+	</script>
 </head>
 
 <body>
-    <div class="container mx-auto">
-        <div class="w-full p-5 bg-blue-200">
-            <h1 class="text-4xl font-bold text-slate-700">Team profile</h1>
-        </div>
-        <div id="team" class="grid grid-cols-4 w-full py-10">
-            <div class="aspect-square rounded-xl border mx-10 flex flex-col">
-		<div class="p-5 border-b flex justify-center items-center flex-col">
-			<h2 class="text-2xl font-bold">Talal</h2>
-			<h3 class="font-light">Manager </h3>
-			
+	<div class="container mx-auto">
+		<div class="w-full p-5 bg-blue-200">
+			<h1 class="text-4xl font-bold text-slate-700">Team profile</h1>
 		</div>
-		<div class="flex-grow flex flex-col text-lg justify-center items-center	">
-			<div class="bg-slate-200 rounded-xl flex flex-col p-10">
-				<span>Id: 1</span>
-				<a class="text-sky-500 hover:text-sky-600"href="mailto:talal@fakemail.com">Email: talal@fakemail.com</a>
-				<span class="officeNumber">Office Number: 12</span>
+		<div id="team" class="grid grid-cols-4 w-full py-10">
+			<div class="aspect-square rounded-xl border mx-10 flex flex-col">
+				<div class="p-5 border-b flex justify-center items-center flex-col">
+					<h2 class="text-2xl font-bold">b</h2>
+					<h3 class="font-light">Manager <i class="ri-cup-fill"></i></h3>
+
+				</div>
+				<div class="flex-grow flex flex-col text-lg justify-center items-center	">
+					<div class="bg-slate-200 rounded-xl flex flex-col p-10">
+						<span>Id: 1</span>
+						<a class="text-sky-500 hover:text-sky-600" href="mailto:b@mail.com">Email: b@mail.com</a>
+						<span class="officeNumber">Office Number: 1</span>
+					</div>
+				</div>
 			</div>
-		</div>
-	</div><div class="aspect-square rounded-xl border mx-10 flex flex-col">
-		<div class="p-5 border-b flex justify-center items-center flex-col">
-			<h2 class="text-2xl font-bold">Rachel</h2>
-			<h3 class="font-light">Intern </h3>
-			
-		</div>
-		<div class="flex-grow flex flex-col text-lg justify-center items-center	">
-			<div class="bg-slate-200 rounded-xl flex flex-col p-10">
-				<span>Id: 2</span>
-				<a class="text-sky-500 hover:text-sky-600"href="mailto:rachel@fakemail.com">Email: rachel@fakemail.com</a>
-				<span class="school">School: University of Toronto</span>
+			<div class="aspect-square rounded-xl border mx-10 flex flex-col">
+				<div class="p-5 border-b flex justify-center items-center flex-col">
+					<h2 class="text-2xl font-bold">g</h2>
+					<h3 class="font-light">Engineer <i class="ri-code-s-slash-fill"></i></h3>
+
+				</div>
+				<div class="flex-grow flex flex-col text-lg justify-center items-center	">
+					<div class="bg-slate-200 rounded-xl flex flex-col p-10">
+						<span>Id: 2</span>
+						<a class="text-sky-500 hover:text-sky-600" href="mailto:g@mail.com">Email: g@mail.com</a>
+						<a class="text-sky-500 hover:text-sky-600" href="https://github.com/zzzbia"> Github: zzzbia</a>
+					</div>
+				</div>
 			</div>
-		</div>
-	</div><div class="aspect-square rounded-xl border mx-10 flex flex-col">
-		<div class="p-5 border-b flex justify-center items-center flex-col">
-			<h2 class="text-2xl font-bold">Rabia</h2>
-			<h3 class="font-light">Engineer </h3>
-			
-		</div>
-		<div class="flex-grow flex flex-col text-lg justify-center items-center	">
-			<div class="bg-slate-200 rounded-xl flex flex-col p-10">
-				<span>Id: 3</span>
-				<a class="text-sky-500 hover:text-sky-600"href="mailto:rabia.saeed.1995@gmail.com">Email: rabia.saeed.1995@gmail.com</a>
-				<a class="text-sky-500 hover:text-sky-600" href="https://github.com/zzzbia"> Github: zzzbia</a>
-			</div>
-		</div>
-	</div><div class="aspect-square rounded-xl border mx-10 flex flex-col">
-		<div class="p-5 border-b flex justify-center items-center flex-col">
-			<h2 class="text-2xl font-bold">Tony</h2>
-			<h3 class="font-light">Employee </h3>
-			
-		</div>
-		<div class="flex-grow flex flex-col text-lg justify-center items-center	">
-			<div class="bg-slate-200 rounded-xl flex flex-col p-10">
-				<span>Id: 4</span>
-				<a class="text-sky-500 hover:text-sky-600"href="mailto:tony@fakemail.com">Email: tony@fakemail.com</a>
-				
+			<div class="aspect-square rounded-xl border mx-10 flex flex-col">
+				<div class="p-5 border-b flex justify-center items-center flex-col">
+					<h2 class="text-2xl font-bold">s</h2>
+					<h3 class="font-light">Intern <i class="ri-user-smile-line"></i></h3>
+
+				</div>
+				<div class="flex-grow flex flex-col text-lg justify-center items-center	">
+					<div class="bg-slate-200 rounded-xl flex flex-col p-10">
+						<span>Id: 3</span>
+						<a class="text-sky-500 hover:text-sky-600" href="mailto:s@mail.com">Email: s@mail.com</a>
+						<span class="school">School: UofT</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-        </div>
-    </div>
 </body>
 
 </html>
