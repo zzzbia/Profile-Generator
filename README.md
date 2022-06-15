@@ -11,6 +11,8 @@
 - [Usage](#💡-usage)
 - [Contributing](#👥-contributing)
 - [Tests](#🔍-tests)
+- [Images](#Image)
+- [Video](#video)
 - [Questions](#💭-questions)
 - [License](#📚-license)
 
@@ -60,9 +62,19 @@ you can also clear the Jest cache with the command
 ```
 npm jcache
 ```
+## Images
+![Example](/assets/img/example.png)
+![Terminal](/assets/img/terminal.png)
+## Video
+
+<figure class="video_container">
+  <iframe src="https://drive.google.com/file/d/1HePoAxAl_8u7etDHmrxfR2pEK2a7HCx8/preview" frameborder="0" 
+  width="640" height="480" allowfullscreen="true"> </iframe>
+</figure>
 
 ## 💭 Questions
 If you have any questions, please make an issue within the repo or visit my GitHub profile at [zzzbia's github](https://github.com/zzzbia)
+
 
 ## 📚 License
 Licensed under [ APACHE](https://opensource.org/licenses/Apache-2)
